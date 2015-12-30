@@ -1,0 +1,8 @@
+.footer {
+  padding: 20px;
+}
+
+.item {
+  display: inline-block;
+  list-style: none;  
+}
