@@ -1,7 +1,6 @@
 define(function(require) {
   var Marionette = require('Marionette');
 
-  var template = require('hbs!templates/cars');
   var NoCarsView = require('views/NoCarsView');
   var CarShortView = require('views/car/CarShortView');
 
@@ -13,8 +12,6 @@ define(function(require) {
     tagName: 'table',
 
     className: 'table table-bordered table-hover',
-
-    template: template,
 
     childView: CarShortView,
 
