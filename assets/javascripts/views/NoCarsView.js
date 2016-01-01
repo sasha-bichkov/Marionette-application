@@ -1,10 +1,13 @@
 define(function(require) {
   var Marionette = require('Marionette');
   
-  var template = require('hbs!templates/nocar'); 
+  var template = require('hbs!templates/no-cars'); 
 
 
   var NoCarsView = Marionette.ItemView.extend({
+
+    tagName: 'td',
+
     template: template
   });
 
