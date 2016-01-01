@@ -1,7 +1,7 @@
 define(function(require) {
   var Marionette = require('Marionette');
 
-  var template = require('hbs!templates/cars');
+  var template = require('hbs!templates/car/cars');
   var NoCarsView = require('views/NoCarsView');
   var CarShortView = require('views/car/CarShortView');
 
