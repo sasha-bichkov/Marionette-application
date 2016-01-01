@@ -1,5 +1,5 @@
 define(function(require) {
-  var template = require('hbs!templates/partial/footer');
+  var template = require('hbs!partial/footer');
   var Marionette = require('Marionette');
 
 

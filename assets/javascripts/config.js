@@ -11,7 +11,6 @@ requirejs.config({
     localstorage: "libs/backbone.localstorage",
     text: 'libs/text-2.0.6'
   },
-
   packages: [
     {
       name: 'hbs',
@@ -19,6 +18,9 @@ requirejs.config({
       main: 'hbs'
     }
   ],
+  hbs: {
+    base: 'templates'
+  },
   // указываем псевдонимы
   map: {
     '*': {

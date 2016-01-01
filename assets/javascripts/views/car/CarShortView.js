@@ -1,7 +1,7 @@
 define(function(require) {
   var Marionette = require('Marionette');
 
-  var template = require('hbs!templates/car/car-short');
+  var template = require('hbs!car/car-short');
 
 
   var CarShortView = Marionette.ItemView.extend({

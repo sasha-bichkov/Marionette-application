@@ -1,7 +1,7 @@
 define(function(require) {
   var Marionette = require('Marionette');
 
-  var template = require('hbs!templates/partial/header');
+  var template = require('hbs!partial/header');
   var HeaderModel = require('models/HeaderModel');
 
 
