@@ -7,7 +7,7 @@ define(function(require) {
   var CarCreateLayout = require('layouts/CarCreateLayout');
 
 
-  var CarListAppController = Marionette.Controller.extend({
+  var CarListAppController = Marionette.Object.extend({
 
     initialize: function() {
       var options = this.options;
