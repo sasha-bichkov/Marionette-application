@@ -36,7 +36,7 @@ define(function(require) {
 
 
     renderSort: function() {
-      var sortView = new SortView();
+      var sortView = new SortView({carsCollection: this.carsCollection});
       this.sort.show(sortView);
     }
   });

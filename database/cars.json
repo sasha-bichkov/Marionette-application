@@ -28,5 +28,45 @@
     "description": "Lorem ipsum...",
     "year": "2000",
     "createdAt": "11.12.2015"
+  },
+  {
+    "id": "4",
+    "photo": "car-3",
+    "images": ["car-31", "car-32"],
+    "model": "car-7",
+    "price": 4000,
+    "description": "Lorem ipsum...",
+    "year": "2000",
+    "createdAt": "11.12.2015"
+  },
+  {
+    "id": "5",
+    "photo": "car-3",
+    "images": ["car-31", "car-32"],
+    "model": "car-6",
+    "price": 1400,
+    "description": "Lorem ipsum...",
+    "year": "2000",
+    "createdAt": "11.12.2015"
+  },
+  {
+    "id": "6",
+    "photo": "car-3",
+    "images": ["car-31", "car-32"],
+    "model": "car-4",
+    "price": 7000,
+    "description": "Lorem ipsum...",
+    "year": "2000",
+    "createdAt": "11.12.2015"
+  },
+  {
+    "id": "7",
+    "photo": "car-3",
+    "images": ["car-31", "car-32"],
+    "model": "car-5",
+    "price": 3220,
+    "description": "Lorem ipsum...",
+    "year": "2000",
+    "createdAt": "11.12.2015"
   }
 ]

@@ -25,9 +25,6 @@ define(function(require) {
       'click @ui.del': 'destroyCar'
     },
 
-    initialize: function() {},
-
-
     destroyCar: function(e) {
       var self = this;
       var $el = $(e.target);
