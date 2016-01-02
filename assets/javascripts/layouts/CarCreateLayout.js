@@ -1,7 +1,7 @@
 define(function(require) {
   var Marionette = require('Marionette');
   
-  var template = require('hbs!car/create-car');
+  var template = require('hbs!car/create');
 
 
   var CarCreateLayout = Marionette.LayoutView.extend({
