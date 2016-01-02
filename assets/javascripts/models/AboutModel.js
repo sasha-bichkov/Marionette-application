@@ -7,8 +7,17 @@ define(function(require) {
     url: '/database/about.json',
 
     defaults: {
-      text: ''
+      text: '',
+      edit: false
     },
+
+
+    validate: function(attrs, options) {
+      if (attrs.text.length === 0) {
+        return "Нельзя полностью удалить весь текст";
+      }
+    },
+
 
     getText300Symbols: function() {
       var text = this.get('text');

@@ -1,2 +1,7 @@
 <h2>ABOUT US</h2>
-{{ text }}
+<div id="about" contenteditable="{{edit}}">{{ text }}</div>
+{{#if edit}}
+  <button class="btn btn-default" id="save">Save</button>
+{{else}}
+  <button class="btn btn-default" id="edit">Edit</button>
+{{/if}}
