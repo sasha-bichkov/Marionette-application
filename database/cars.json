@@ -1,15 +1,5 @@
 [
   {
-    "id": "1",
-    "photo": "car-1",
-    "images": ["car-11", "car-12"],
-    "model": "car-1",
-    "price": 1000,
-    "description": "Lorem ipsum...",
-    "year": "2000",
-    "createdAt": "11.11.2014"
-  },
-  {
     "id": "2",
     "photo": "car-2",
     "images": ["car-21", "car-22"],
@@ -18,6 +8,16 @@
     "description": "Lorem ipsum...",
     "year": "2000",
     "createdAt": "01.01.2016"
+  },
+  {
+    "id": "1",
+    "photo": "car-1",
+    "images": ["car-11", "car-12"],
+    "model": "car-1",
+    "price": 1000,
+    "description": "Lorem ipsum...",
+    "year": "2000",
+    "createdAt": "11.11.2014"
   },
   {
     "id": "3",
