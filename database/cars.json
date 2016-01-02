@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "photo": "car-1",
+    "model": "car-1",
+    "description": "Lorem ipsum...",
+    "year": "2000",
+    "createdAt": "11.11.2014"
+  },
+  {
+    "id": "2",
+    "photo": "car-2",
+    "model": "car-2",
+    "description": "Lorem ipsum...",
+    "year": "2000",
+    "createdAt": "01.01.2016"
+  },
+  {
+    "id": "3",
+    "photo": "car-3",
+    "model": "car-3",
+    "description": "Lorem ipsum...",
+    "year": "2000",
+    "createdAt": "11.12.2015"
+  }
+]

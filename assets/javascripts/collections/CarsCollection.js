@@ -6,9 +6,11 @@ define(function(require) {
 
   var CarsCollection = Backbone.Collection.extend({
 
+    url: 'database/cars.json',
+
     model: CarModel,
 
-    localStorage: new Backbone.LocalStorage("Cars")
+    initialize: function() {}
   });
 
   return CarsCollection;

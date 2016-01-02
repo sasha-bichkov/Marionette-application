@@ -1,15 +1,13 @@
 define(function(require) {
   var Backbone = require('Backbone');
-  var LocalStorage = require('localstorage');
 
 
   var AboutModel = Backbone.Model.extend({
 
-    localStorage: new LocalStorage('About'),
+    url: '/database/about.json',
 
     defaults: {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt laboriosam molestiae in autem ea animi eaque est facere alias mollitia, blanditiis, veritatis eum, error perspiciatis hic atque, quis at sint.' +
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt laboriosam molestiae in autem ea animi eaque est facere alias mollitia, blanditiis, veritatis eum, error perspiciatis hic atque, quis at sint.'
+      text: ''
     },
 
     getText300Symbols: function() {

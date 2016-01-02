@@ -1,6 +1,7 @@
 define(function(require) {
-  var template = require('hbs!partial/footer');
   var Marionette = require('Marionette');
+
+  var template = require('hbs!partial/footer');
 
 
   var FooterLayout = Marionette.LayoutView.extend({

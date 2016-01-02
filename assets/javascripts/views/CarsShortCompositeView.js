@@ -5,6 +5,7 @@ define(function(require) {
   var NoCarsView = require('views/NoCarsView');
   var CarShortView = require('views/car/CarShortView');
 
+
   var CarsShortCompositeView = Marionette.CompositeView.extend({
 
     template: template,

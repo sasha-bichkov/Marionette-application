@@ -8,7 +8,7 @@ define(function(require) {
 
     template: template,
 
-    onRender: function() {}
+    initialize: function() {}
   });
 
   return AboutLayout;

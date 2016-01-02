@@ -8,7 +8,6 @@ requirejs.config({
     backbone: 'libs/backbone-1.1.2',
     marionette: 'libs/marionette-2.4.4',
     handlebars: 'libs/handlebars-4.0.5',
-    localstorage: "libs/backbone.localstorage",
     text: 'libs/text-2.0.6'
   },
   packages: [

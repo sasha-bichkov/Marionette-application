@@ -18,11 +18,10 @@ define(function(require) {
       navigation: '#navigation'
     },
 
-
     initialize: function(options) {
       this.aboutModel = options.aboutModel;
 
-      this.listenTo(this.aboutModel, 'change', this.setText);
+      this.listenTo(this.aboutModel, 'change:text', this.setText);
 
       this.setText();
     },
