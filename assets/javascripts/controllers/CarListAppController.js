@@ -15,13 +15,14 @@ define(function(require) {
       var options = this.options;
 
       this.main = options.region_main;
+      this.sortModel = options.sortModel;
       this.aboutModel = options.aboutModel;
       this.carsCollection = options.carsCollection;
     },
 
 
     home: function() {
-      var homeLayout = new HomeLayout({carsCollection: this.carsCollection});
+      var homeLayout = new HomeLayout({sortModel: this.sortModel, carsCollection: this.carsCollection});
       this.main.show(homeLayout);
     },
 

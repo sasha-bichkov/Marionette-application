@@ -16,7 +16,9 @@ define(function(require) {
     },
 
     initialize: function() {
-      this.carsCollection = this.options.carsCollection;
+      var options = this.options;
+      this.sortModel = options.sortModel;
+      this.carsCollection = options.carsCollection;
     },
 
 
@@ -36,7 +38,7 @@ define(function(require) {
 
 
     renderSort: function() {
-      var sortView = new SortView({carsCollection: this.carsCollection});
+      var sortView = new SortView({model: this.sortModel, carsCollection: this.carsCollection});
       this.sort.show(sortView);
     }
   });

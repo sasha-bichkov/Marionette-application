@@ -10,7 +10,26 @@ define(function(require) {
 
     model: CarModel,
 
-    initialize: function() {}
+    initialize: function(attrs, options) {
+      this.sortModel = options.sortModel;
+      this.listenTo(this.sortModel, 'change', this.runSort);
+    },
+
+
+    runSort: function() {
+      this.setComparator();
+      this.sort();
+    },
+
+
+    setComparator: function() {
+      var attrs = this.sortModel.attributes;
+      var sortByFiled = _.invert(attrs)[true];
+
+      this.comparator = function(model) {
+        return model.get(sortByFiled);
+      };
+    }
   });
 
   return CarsCollection;

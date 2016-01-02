@@ -12,10 +12,12 @@ define(function(require) {
   var aboutModel = new AboutModel();
   aboutModel.fetch();
 
-  var CarsCollection = require('collections/CarsCollection');
-  var carsCollection = new CarsCollection();
-  carsCollection.fetch({reset: true});
+  var SortModel = require('models/SortModel');
+  var sortModel = new SortModel();
 
+  var CarsCollection = require('collections/CarsCollection');
+  var carsCollection = new CarsCollection(null, {sortModel: sortModel});
+  carsCollection.fetch({reset: true});
 
   // Создаём приложение
   var CarListApp = new Marionette.Application();
@@ -33,7 +35,8 @@ define(function(require) {
     var carListAppController = new CarListAppController({
       region_main: CarListApp.main,
       aboutModel: aboutModel,
-      carsCollection: carsCollection
+      carsCollection: carsCollection,
+      sortModel: sortModel
     });
 
     // Создаём роутер и передаём ему контроллер

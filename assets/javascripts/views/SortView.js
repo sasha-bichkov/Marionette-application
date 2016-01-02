@@ -2,14 +2,11 @@ define(function(require) {
   var Marionette = require('Marionette');
 
   var template = require('hbs!partial/sort');
-  var SortModel = require('models/SortModel');
 
 
   var SortView = Marionette.ItemView.extend({
 
     tagName: 'ul',
-
-    model: new SortModel(),
 
     template: template,
 
@@ -23,26 +20,21 @@ define(function(require) {
       'click @ui.byPrice': 'sortByPrice'
     },
 
-    initialize: function() {
-      this.carsCollection = this.options.carsCollection;
-    },
+    initialize: function() {},
 
 
     sortByModel: function() {
-      this.carsCollection.comparator = function(model) {
-        return model.get('model');
-      };
-
-      this.carsCollection.sort();
+      this.runSort({model: true});
     },
 
 
     sortByPrice: function() {
-      this.carsCollection.comparator = function(model) {
-        return model.get('price');
-      };
+      this.runSort({price: true});
+    },
 
-      this.carsCollection.sort();
+
+    runSort: function(hash) {
+      this.model.setSorting(hash);
     }
   });
 
