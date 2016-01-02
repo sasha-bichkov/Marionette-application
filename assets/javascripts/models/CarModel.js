@@ -7,6 +7,7 @@ define(function(require) {
       id: null,
       model: null,
       photo: null,
+      images: null,
       price: null,
       description: null,
       year: null,

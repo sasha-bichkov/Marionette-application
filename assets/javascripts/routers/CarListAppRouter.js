@@ -7,6 +7,7 @@ define(function(require) {
       '': 'home',
       'car/create': 'createCar',
       'car/:id': 'showCar',
+      'car/edit/:id': 'editCar',
       'about-us': 'aboutUs',
       '*notFound': 'home'
     }
