@@ -2,7 +2,6 @@ define(function(require) {
   var Marionette = require('Marionette');
 
   var template = require('hbs!home');
-  var CarsCollection = require('collections/CarsCollection');
   var CarsShortCompositeView = require('views/CarsShortCompositeView');
 
 
@@ -14,17 +13,19 @@ define(function(require) {
       cars: "#cars"
     },
 
+    initialize: function() {
+      this.carsCollection = this.options.carsCollection;
+    },
+
+
     onRender: function() {
       this.renderCars();
     },
 
 
     renderCars: function() {
-      var carsCollection = new CarsCollection();
-      carsCollection.fetch({reset: true});
-
       var carsShortCompositeView = new CarsShortCompositeView({
-        collection: carsCollection
+        collection: this.carsCollection
       });
 
       this.cars.show(carsShortCompositeView);

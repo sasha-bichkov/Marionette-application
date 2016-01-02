@@ -2,6 +2,7 @@ define(function(require) {
   var Marionette = require('Marionette');
 
   var CarView = require('views/car/CarShortView');
+  var CarLayout = require('layouts/CarLayout');
   var HomeLayout = require('layouts/HomeLayout');
   var AboutLayout = require('layouts/AboutLayout');
   var CarCreateLayout = require('layouts/CarCreateLayout');
@@ -14,11 +15,12 @@ define(function(require) {
 
       this.main = options.region_main;
       this.aboutModel = options.aboutModel;
+      this.carsCollection = options.carsCollection;
     },
 
 
     home: function() {
-      var homeLayout = new HomeLayout();
+      var homeLayout = new HomeLayout({carsCollection: this.carsCollection});
       this.main.show(homeLayout);
     },
 
@@ -29,8 +31,9 @@ define(function(require) {
     },
 
 
-    showCar: function() {
-      var carLayout = new CarLayout();
+    showCar: function(id) {
+      var carModel = this.carsCollection.findWhere({id: id});
+      var carLayout = new CarLayout({model: carModel});
       this.main.show(carLayout);
     },
 

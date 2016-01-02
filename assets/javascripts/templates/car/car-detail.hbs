@@ -1,1 +1,17 @@
-<div>CAR</div>
+<div><img src="assets/images/{{ photo }}.jpg" width="250" /></div>
+<div>id: {{ id }}</div>
+<div>Model: {{ model }}</div>
+<div>Price: {{ price }}</div>
+<div>Description: {{ description }}</div>
+<div>Year: {{ year }}</div>
+<div>Created At: {{ createdAt }}</div>
+<div>
+  <ul>
+    <li class="item">
+      <a class="btn btn-default link" href="#car/edit/{{id}}">Edit</a>
+    </li>
+    <li class="item">
+      <a class="btn btn-default link" href="#car/destroy/{{id}}">Delete</a>
+    </li>
+  </ul>
+</div>
