@@ -12,11 +12,12 @@ define(function(require) {
     template: template,
 
     ui: {
+      links: 'a',
       item: '.item'
     },
 
     events: {
-      'click @ui.item': 'changeLink'
+      'click @ui.item': 'setActiveLink'
     },
 
     initialize: function(options) {
@@ -33,23 +34,18 @@ define(function(require) {
     },
 
 
-    changeLink: function(e) {
-      var $link = $(e.target);
-      this.setActiveLink($link);
-    },
-
-
-    setActiveLink: function($link) {
+    setActiveLink: function(e) {
       this.clearActive();
 
       var hash = this.getHash();
-      var $link = $link || this.getCurrentLink(hash);
+      var $target = e ? $(e.target) : null;
+      var $link = $target || this.getCurrentLink(hash);
       $link.addClass('active');
     },
 
 
     clearActive: function() {
-      var $links = this.getLinks();
+      var $links = this.ui.links;
       $links.removeClass('active');
     },
 
@@ -60,13 +56,8 @@ define(function(require) {
 
 
     getCurrentLink: function(hash) {
-      var $links = this.getLinks();
+      var $links = this.ui.links;
       return $links.filter('[href="' + hash + '"]');
-    },
-
-
-    getLinks: function() {
-      return this.$el.find('a');
     },
 
 
