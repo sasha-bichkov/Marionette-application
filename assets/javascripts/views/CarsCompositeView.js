@@ -7,7 +7,7 @@ define(function(require) {
   var CarShortView = require('views/car/CarShortView');
 
 
-  var CarsShortCompositeView = Marionette.CompositeView.extend({
+  var CarsCompositeView = Marionette.CompositeView.extend({
 
     template: template,
 
@@ -29,8 +29,8 @@ define(function(require) {
 
 
     destroyCar: function(e) {
-      var $el = $(e.target);
       var self = this;
+      var $el = $(e.target);
       alertify.confirm("Are you sure?", function (e) {
         if (e) {
           var id = $el.data('model-id').toString();
@@ -46,5 +46,5 @@ define(function(require) {
     }
   });
 
-  return CarsShortCompositeView;
+  return CarsCompositeView;
 });

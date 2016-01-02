@@ -2,7 +2,8 @@ define(function(require) {
   var Marionette = require('Marionette');
 
   var template = require('hbs!home');
-  var CarsShortCompositeView = require('views/CarsShortCompositeView');
+  var SortView = require('views/SortView');
+  var CarsCompositeView = require('views/CarsCompositeView');
 
 
   var HomeLayout = Marionette.LayoutView.extend({
@@ -10,7 +11,8 @@ define(function(require) {
     template: template,
 
     regions: {
-      cars: "#cars"
+      cars: '#cars',
+      sort: '#sort'
     },
 
     initialize: function() {
@@ -19,16 +21,23 @@ define(function(require) {
 
 
     onRender: function() {
+      this.renderSort();
       this.renderCars();
     },
 
 
     renderCars: function() {
-      var carsShortCompositeView = new CarsShortCompositeView({
+      var carsCompositeView = new CarsCompositeView({
         collection: this.carsCollection
       });
 
       this.cars.show(carsShortCompositeView);
+    },
+
+
+    renderSort: function() {
+      var sortView = new SortView();
+      this.sort.show(sortView);
     }
   });
 
