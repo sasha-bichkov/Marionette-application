@@ -22,6 +22,7 @@ define(function(require) {
       this.main.show(homeLayout);
     },
 
+
     createCar: function() {
       var carCreateLayout = new CarCreateLayout();
       this.main.show(carCreateLayout);

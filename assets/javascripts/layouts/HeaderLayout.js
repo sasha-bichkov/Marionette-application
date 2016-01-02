@@ -3,22 +3,21 @@ define(function(require) {
 
   var template = require('hbs!partial/header');
   var HeaderModel = require('models/HeaderModel');
+  var NavigationView = require('views/NavigationView');
 
 
   var HeaderLayout = Marionette.LayoutView.extend({
+
+    tagName: 'ul',
 
     model: new HeaderModel(),
 
     template: template,
 
-    ui: {
-      links: 'a',
-      item: '.item'
+    regions: {
+      navigation: '#navigation'
     },
 
-    events: {
-      'click @ui.item': 'setActiveLink'
-    },
 
     initialize: function(options) {
       this.aboutModel = options.aboutModel;
@@ -30,34 +29,7 @@ define(function(require) {
 
 
     onRender: function() {
-      this.setActiveLink();
-    },
-
-
-    setActiveLink: function(e) {
-      this.clearActive();
-
-      var hash = this.getHash();
-      var $target = e ? $(e.target) : null;
-      var $link = $target || this.getCurrentLink(hash);
-      $link.addClass('active');
-    },
-
-
-    clearActive: function() {
-      var $links = this.ui.links;
-      $links.removeClass('active');
-    },
-
-
-    getHash: function() {
-      return this.model.getHash();
-    },
-
-
-    getCurrentLink: function(hash) {
-      var $links = this.ui.links;
-      return $links.filter('[href="' + hash + '"]');
+      this.navigation.show(new NavigationView());
     },
 
 
