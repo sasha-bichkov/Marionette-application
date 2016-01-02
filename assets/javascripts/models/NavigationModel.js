@@ -3,6 +3,7 @@ define(function(require) {
 
 
   var NavigationModel = Backbone.Model.extend({
+
     defaults: {
       items: [
         {href: '#', title: 'Home'},

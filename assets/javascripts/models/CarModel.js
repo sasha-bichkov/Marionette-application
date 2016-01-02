@@ -3,6 +3,7 @@ define(function(require) {
 
 
   var CarModel = Backbone.Model.extend({
+
     defaults: {
       id: null,
       model: null,
