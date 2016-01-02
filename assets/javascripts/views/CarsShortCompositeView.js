@@ -16,7 +16,29 @@ define(function(require) {
 
     emptyView: NoCarsView,
 
-    initialize: function() {}
+    ui: {
+      del: '.link-delete'
+    },
+
+    events: {
+      'click @ui.del': 'destroyCar'
+    },
+
+    initialize: function() {},
+
+
+    destroyCar: function(e) {
+      e.preventDefault();
+      var $el = $(e.target);
+      var id = $el.data('model-id').toString();
+      var model = this.getModelById({id: id});
+      this.collection.remove(model);
+    },
+
+
+    getModelById: function(option) {
+      return this.collection.findWhere(option);
+    }
   });
 
   return CarsShortCompositeView;
