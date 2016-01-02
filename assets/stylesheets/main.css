@@ -2,7 +2,7 @@
   padding: 20px;
 }
 
-.item {
+.header-item, .item {
   display: inline-block;
   list-style: none;  
 }

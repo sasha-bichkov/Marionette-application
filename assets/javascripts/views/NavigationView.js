@@ -12,8 +12,8 @@ define(function(require) {
     template: template,
 
     ui: {
-      links: '.link',
-      item: '.item'
+      item: '.header-item',
+      links: '.header-link'
     },
 
     events: {
