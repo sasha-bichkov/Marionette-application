@@ -15,8 +15,11 @@ define(function(require) {
   var SortModel = require('models/SortModel');
   var sortModel = new SortModel();
 
+  var PaginationModel = require('models/PaginationModel');
+  var paginationModel = new PaginationModel();
+
   var CarsCollection = require('collections/CarsCollection');
-  var carsCollection = new CarsCollection(null, {sortModel: sortModel});
+  var carsCollection = new CarsCollection(null, {sortModel: sortModel, paginationModel: paginationModel});
   carsCollection.fetch({reset: true});
 
   // Создаём приложение
@@ -36,7 +39,8 @@ define(function(require) {
       region_main: CarListApp.main,
       aboutModel: aboutModel,
       carsCollection: carsCollection,
-      sortModel: sortModel
+      sortModel: sortModel,
+      paginationModel: paginationModel
     });
 
     // Создаём роутер и передаём ему контроллер

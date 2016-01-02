@@ -6,3 +6,7 @@
   display: inline-block;
   list-style: none;  
 }
+
+#pagination {
+  margin-bottom: 100px;
+}

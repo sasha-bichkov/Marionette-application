@@ -18,11 +18,17 @@ define(function(require) {
       this.sortModel = options.sortModel;
       this.aboutModel = options.aboutModel;
       this.carsCollection = options.carsCollection;
+      this.paginationModel = options.paginationModel;
     },
 
 
     home: function() {
-      var homeLayout = new HomeLayout({sortModel: this.sortModel, carsCollection: this.carsCollection});
+      var homeLayout = new HomeLayout({
+        sortModel: this.sortModel, 
+        carsCollection: this.carsCollection,
+        paginationModel: this.paginationModel
+      });
+
       this.main.show(homeLayout);
     },
 
