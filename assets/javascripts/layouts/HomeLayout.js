@@ -31,7 +31,7 @@ define(function(require) {
         collection: this.carsCollection
       });
 
-      this.cars.show(carsShortCompositeView);
+      this.cars.show(carsCompositeView);
     },
 
 
