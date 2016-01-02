@@ -2,7 +2,9 @@
   {
     "id": "1",
     "photo": "car-1",
+    "images": ["car-11", "car-12"],
     "model": "car-1",
+    "price": 1000,
     "description": "Lorem ipsum...",
     "year": "2000",
     "createdAt": "11.11.2014"
@@ -10,7 +12,9 @@
   {
     "id": "2",
     "photo": "car-2",
+    "images": ["car-21", "car-22"],
     "model": "car-2",
+    "price": 2000,
     "description": "Lorem ipsum...",
     "year": "2000",
     "createdAt": "01.01.2016"
@@ -18,7 +22,9 @@
   {
     "id": "3",
     "photo": "car-3",
+    "images": ["car-31", "car-32"],
     "model": "car-3",
+    "price": 3000,
     "description": "Lorem ipsum...",
     "year": "2000",
     "createdAt": "11.12.2015"
