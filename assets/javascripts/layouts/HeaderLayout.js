@@ -18,6 +18,10 @@ define(function(require) {
       navigation: '#navigation'
     },
 
+    modelEvents: {
+      'change': 'render'
+    },
+
     initialize: function(options) {
       this.aboutModel = options.aboutModel;
 
@@ -28,6 +32,11 @@ define(function(require) {
 
 
     onRender: function() {
+      this.renderNavigation();
+    },
+
+
+    renderNavigation: function() {
       this.navigation.show(new NavigationView());
     },
 
