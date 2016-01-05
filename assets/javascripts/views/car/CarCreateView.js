@@ -32,6 +32,7 @@ define(function(require) {
       var isModelUnique = this.isModelUnique.bind(this);
 
       if (isModelUnique(data)) {
+        data.id = this.setId();
         if (this.photo) data.photo = this.photo;
         var carModel = new CarModel(data);
         this.carsCollection.add(carModel);
@@ -50,6 +51,14 @@ define(function(require) {
     isModelUnique: function(data) {
       var model = data.model;
       return !this.carsCollection.findWhere({model: model});
+    },
+
+
+    setId: function() {
+      var models = this.carsCollection.models;
+      var model_ids = _.map(models, function(m) { return m.get('id'); });
+      var max_id = _.max(model_ids);
+      return ++max_id;
     },
 
 

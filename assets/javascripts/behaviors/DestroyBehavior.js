@@ -21,7 +21,7 @@ define(function(require) {
 
       alertify.confirm("Are you sure?", function (e) {
         if (e) {
-          var id = $el.data('model-id').toString();
+          var id = $el.data('model-id');
           var model = self.getModelById({id: id});
 
           if (self.view.collection) {
