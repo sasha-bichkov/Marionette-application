@@ -54,14 +54,13 @@ define(function(require) {
 
 
     openFile: function(e) {
+      var self = this;
       var input = event.target;
       var reader = new FileReader();
-      var self = this;
 
       reader.onload = function(){
         var dataURL = reader.result;
-        var output = document.getElementById('output');
-        output.src = dataURL;
+        self.ui.output.attr('src', dataURL);
         self.photo = dataURL;
       };
 
