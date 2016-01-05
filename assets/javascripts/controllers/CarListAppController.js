@@ -2,7 +2,7 @@ define(function(require) {
   var Marionette = require('Marionette');
 
   var CarView = require('views/car/CarShortView');
-  var CarLayout = require('layouts/CarLayout');
+  var CarDetailView = require('views/car/CarDetailView');
   var HomeLayout = require('layouts/HomeLayout');
   var CarEditView = require('views/car/CarEditView');
   var AboutLayout = require('layouts/AboutLayout');
@@ -41,8 +41,8 @@ define(function(require) {
 
     showCar: function(id) {
       var carModel = this.getModelById({id: id});
-      var carLayout = new CarLayout({model: carModel});
-      this.main.show(carLayout);
+      var carDetailView = new CarDetailView({model: carModel});
+      this.main.show(carDetailView);
     },
 
 

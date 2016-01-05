@@ -2,13 +2,20 @@ define(function(require) {
   var Marionette = require('Marionette');
 
   var template = require('hbs!car/detail');
+  var DestroyBehavior = require('behaviors/DestroyBehavior');
 
 
   var CarDetailView = Marionette.ItemView.extend({
 
     template: template,
 
-    initialize: function() {}
+    initialize: function() {},
+
+    behaviors: {
+      destroy: {
+        behaviorClass: DestroyBehavior
+      }
+    }
   });
 
   return CarDetailView;
