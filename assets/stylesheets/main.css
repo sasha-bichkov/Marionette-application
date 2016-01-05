@@ -10,3 +10,7 @@
 #pagination {
   margin-bottom: 100px;
 }
+
+label {
+  width: 200px;
+}

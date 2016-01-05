@@ -6,7 +6,7 @@ define(function(require) {
   var HomeLayout = require('layouts/HomeLayout');
   var CarEditView = require('views/car/CarEditView');
   var AboutLayout = require('layouts/AboutLayout');
-  var CarCreateLayout = require('layouts/CarCreateLayout');
+  var CarCreateView = require('views/car/CarCreateView');
 
 
   var CarListAppController = Marionette.Object.extend({
@@ -34,8 +34,8 @@ define(function(require) {
 
 
     createCar: function() {
-      var carCreateLayout = new CarCreateLayout();
-      this.main.show(carCreateLayout);
+      var carCreateView = new CarCreateView({carsCollection: this.carsCollection});
+      this.main.show(carCreateView);
     },
 
 
@@ -59,8 +59,8 @@ define(function(require) {
     },
 
 
-    getModelById: function(option) {
-      return this.carsCollection.findWhere(option);
+    getModelById: function(hash) {
+      return this.carsCollection.findWhere(hash);
     }
   });
 
