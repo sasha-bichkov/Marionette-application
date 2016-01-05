@@ -1,7 +1,7 @@
 [
   {
     "id": "2",
-    "photo": "car-2",
+    "photo": "assets/images/car-2.jpg",
     "images": ["car-21", "car-22"],
     "model": "car-2",
     "price": 2000,
@@ -11,7 +11,7 @@
   },
   {
     "id": "1",
-    "photo": "car-1",
+    "photo": "assets/images/car-1.jpg",
     "images": ["car-11", "car-12"],
     "model": "car-1",
     "price": 1000,
@@ -21,7 +21,7 @@
   },
   {
     "id": "3",
-    "photo": "car-3",
+    "photo": "assets/images/car-3.jpg",
     "images": ["car-31", "car-32"],
     "model": "car-3",
     "price": 3000,
@@ -31,7 +31,7 @@
   },
   {
     "id": "4",
-    "photo": "car-3",
+    "photo": "assets/images/car-3.jpg",
     "images": ["car-31", "car-32"],
     "model": "car-7",
     "price": 4000,
@@ -41,7 +41,7 @@
   },
   {
     "id": "5",
-    "photo": "car-3",
+    "photo": "assets/images/car-3.jpg",
     "images": ["car-31", "car-32"],
     "model": "car-6",
     "price": 1400,
@@ -51,7 +51,7 @@
   },
   {
     "id": "6",
-    "photo": "car-3",
+    "photo": "assets/images/car-3.jpg",
     "images": ["car-31", "car-32"],
     "model": "car-4",
     "price": 7000,
@@ -61,7 +61,7 @@
   },
   {
     "id": "7",
-    "photo": "car-3",
+    "photo": "assets/images/car-3.jpg",
     "images": ["car-31", "car-32"],
     "model": "car-5",
     "price": 3220,
