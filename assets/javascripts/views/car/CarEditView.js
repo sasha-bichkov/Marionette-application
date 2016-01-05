@@ -15,7 +15,16 @@ define(function(require) {
       }
     },
 
-    initialize: function() {},
+    initialize: function() {
+      this.carsCollection = this.options.carsCollection;
+
+      this.listenTo(this.carsCollection, 'reset', this.render);
+    },
+
+
+    onRender: function() {
+      
+    }
   });
 
   return CarEditView;
