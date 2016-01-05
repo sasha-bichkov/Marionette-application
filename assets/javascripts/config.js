@@ -6,6 +6,7 @@ requirejs.config({
     jquery: 'libs/jquery/jquery-1.11.3',
     underscore: 'libs/underscore-1.6.0',
     backbone: 'libs/backbone-1.1.2',
+    backbone_paginator: 'libs/backbone-paginator-2.0.0',
     marionette: 'libs/marionette-2.4.4',
     handlebars: 'libs/handlebars-4.0.5',
     text: 'libs/text-2.0.6',
@@ -27,7 +28,8 @@ requirejs.config({
       $: 'jquery',
       _: 'underscore',
       Backbone: 'backbone',
-      Marionette: 'marionette'
+      Marionette: 'marionette',
+      Backbone_Paginator: 'backbone_paginator'
     }
   },
   // Указываем зависимости к библиотекам
@@ -43,8 +45,11 @@ requirejs.config({
       deps: ['backbone'],
       exports: 'Marionette'
     },
+    backbone_paginator: {
+      deps: ['backbone']
+    },
     handlebars: {
       exports: 'Handlebars'
-    }
+    },
   }
 });

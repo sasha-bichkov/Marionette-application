@@ -5,22 +5,20 @@ define(function(require) {
   var PaginationModel = Backbone.Model.extend({
 
     defaults: {
-      currentPage: 1,
-      itemPerPage: 5,
       totalPages: 0,
       pages: []
     },
 
-    setTotalPages: function(els) {
-      var pages = this.getTotalPages(els);
+    setTotalPages: function(els, pageSize) {
+      var pages = this.getTotalPages(els, pageSize);
       this.set('totalPages', pages);
 
       this.setPages();
     },
 
 
-    getTotalPages: function(els) {
-      return Math.ceil(els / this.get('itemPerPage'));
+    getTotalPages: function(els, pageSize) {
+      return Math.ceil(els / pageSize);
     },
 
 
@@ -32,8 +30,7 @@ define(function(require) {
 
     getRange: function() {
       var totalPages = this.get('totalPages') + 1;
-      var currentPage = this.get('currentPage');
-      return _.range(currentPage, totalPages);
+      return _.range(1, totalPages);
     }
   });
 
