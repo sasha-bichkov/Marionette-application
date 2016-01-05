@@ -48,7 +48,7 @@ define(function(require) {
 
     editCar: function(id) {
       var carModel = this.getModelById(id);
-      var carEditView = new CarEditView({model: carModel});
+      var carEditView = new CarEditView({model: carModel, carsCollection: this.carsCollection});
       this.main.show(carEditView);
     },
 

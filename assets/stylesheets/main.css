@@ -7,6 +7,10 @@
   list-style: none;  
 }
 
+#main {
+  padding: 60px 0;
+}
+
 #main, #pagination {
   margin-bottom: 100px;
 }
