@@ -33,7 +33,8 @@ define(function(require) {
 
       if (isModelUnique(data)) {
         data.id = this.setId();
-        if (this.photo) data.photo = this.photo;
+        data.createdAt = this.getCreatedDate();
+        if (this.photo) data.photo = [this.photo];
         var carModel = new CarModel(data);
         this.carsCollection.add(carModel);
         Backbone.history.navigate('/', {trigger: true});
@@ -59,6 +60,12 @@ define(function(require) {
       var model_ids = _.map(models, function(m) { return m.get('id'); });
       var max_id = _.max(model_ids);
       return ++max_id;
+    },
+
+
+    getCreatedDate: function() {
+      var d = new Date();
+      return d.getDay() + '.' + (d.getMonth()+1) + '.' + d.getFullYear();
     },
 
 

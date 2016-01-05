@@ -1,8 +1,7 @@
 [
   {
     "id": 2,
-    "photo": "assets/images/car-2.jpg",
-    "images": ["car-21", "car-22"],
+    "photo": ["assets/images/car-2.jpg", "assets/images/car-21.jpg", "assets/images/car-22.jpg"],
     "model": "car-2",
     "price": 2000,
     "description": "Lorem ipsum...",
@@ -11,8 +10,7 @@
   },
   {
     "id": 1,
-    "photo": "assets/images/car-1.jpg",
-    "images": ["car-11", "car-12"],
+    "photo": ["assets/images/car-1.jpg", "assets/images/car-11.jpg", "assets/images/car-12.jpg"],
     "model": "car-1",
     "price": 1000,
     "description": "Lorem ipsum...",
@@ -21,8 +19,7 @@
   },
   {
     "id": 3,
-    "photo": "assets/images/car-3.jpg",
-    "images": ["car-31", "car-32"],
+    "photo": ["assets/images/car-3.jpg", "assets/images/car-31.jpg", "assets/images/car-32.jpg"],
     "model": "car-3",
     "price": 3000,
     "description": "Lorem ipsum...",
@@ -31,8 +28,7 @@
   },
   {
     "id": 4,
-    "photo": "assets/images/car-3.jpg",
-    "images": ["car-31", "car-32"],
+    "photo": ["assets/images/car-3.jpg", "assets/images/car-31.jpg", "assets/images/car-32.jpg"],
     "model": "car-7",
     "price": 4000,
     "description": "Lorem ipsum...",
@@ -41,8 +37,7 @@
   },
   {
     "id": 5,
-    "photo": "assets/images/car-3.jpg",
-    "images": ["car-31", "car-32"],
+    "photo": ["assets/images/car-3.jpg", "assets/images/car-31.jpg", "assets/images/car-32.jpg"],
     "model": "car-6",
     "price": 1400,
     "description": "Lorem ipsum...",
@@ -51,8 +46,7 @@
   },
   {
     "id": 6,
-    "photo": "assets/images/car-3.jpg",
-    "images": ["car-31", "car-32"],
+    "photo": ["assets/images/car-3.jpg", "assets/images/car-31.jpg", "assets/images/car-32.jpg"],
     "model": "car-4",
     "price": 7000,
     "description": "Lorem ipsum...",
@@ -61,8 +55,7 @@
   },
   {
     "id": 7,
-    "photo": "assets/images/car-3.jpg",
-    "images": ["car-31", "car-32"],
+    "photo": ["assets/images/car-3.jpg", "assets/images/car-31.jpg", "assets/images/car-32.jpg"],
     "model": "car-5",
     "price": 3220,
     "description": "Lorem ipsum...",

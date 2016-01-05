@@ -1,4 +1,9 @@
-<div><img src="assets/images/{{ photo }}.jpg" width="250" /></div>
+<div><img src="{{ photo.[0] }}" width="250" /></div>
+{{#each photo}}
+  {{#unless @first }}
+    <div><img src="{{ this }}" width="150" /></div>
+  {{/unless}}
+{{/each}}
 <div>id: {{ id }}</div>
 <div>Model: {{ model }}</div>
 <div>Price: {{ price }}</div>

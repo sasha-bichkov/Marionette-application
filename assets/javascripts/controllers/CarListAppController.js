@@ -40,14 +40,14 @@ define(function(require) {
 
 
     showCar: function(id) {
-      var carModel = this.getModelById({id: id});
+      var carModel = this.getModelById(id);
       var carDetailView = new CarDetailView({model: carModel});
       this.main.show(carDetailView);
     },
 
 
     editCar: function(id) {
-      var carModel = this.getModelById({id: id});
+      var carModel = this.getModelById(id);
       var carEditView = new CarEditView({model: carModel});
       this.main.show(carEditView);
     },
@@ -59,8 +59,9 @@ define(function(require) {
     },
 
 
-    getModelById: function(hash) {
-      return this.carsCollection.findWhere(hash);
+    getModelById: function(id) {
+      id = parseInt(id, 10);
+      return this.carsCollection.findWhere({id: id});
     }
   });
 
