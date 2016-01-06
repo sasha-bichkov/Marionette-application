@@ -1,9 +1,10 @@
 {{#if model}}
   <h2>Редактирование автомобиля</h2>
+  <button id="addphoto">Добавить фото</button>
   {{#each photo}}
   <div>
     <ul>
-      <li>
+      <li data-photo-id="{{ @index }}">
         <img src="{{ this }}" class="car-photo" width="250">
         <input class="photo" type="file" >
         <a href="#" class="btn btn-default link link-photo-delete">Delete</a>

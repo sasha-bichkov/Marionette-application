@@ -23,12 +23,14 @@ define(function(require) {
       save: '#save',
       photo: '.car-photo',
       carForm: '#car-form',
-      del: '.link-photo-delete'
+      del: '.link-photo-delete',
+      addphoto: '#addphoto'
     },
 
     events: {
+      'click @ui.del': 'deletePhoto',
       'click @ui.save': 'saveEditedCar',
-      'click @ui.del': 'deletePhoto'
+      'click @ui.addphoto': 'addPhoto'
     },
 
     initialize: function() {
@@ -42,6 +44,7 @@ define(function(require) {
     setCarModel: function() {
       if (!this.model) {
         this.model = this.getModelById(this.id);
+        this.listenTo(this.model, 'change', this.render);
         this.render();
       }
     },
@@ -49,7 +52,10 @@ define(function(require) {
 
     deletePhoto: function(e) {
       e.preventDefault();
-      $(e.target).parent().remove();
+      var id = $(e.target).parent().data('photo-id');
+      var copy = _.clone(this.model.get('photo'));
+      var photos = _.without(copy, copy[id]);
+      this.model.set('photo', photos);
     },
 
 
@@ -69,6 +75,13 @@ define(function(require) {
       } else {
         alert('A car with such a model already exists');
       }
+    },
+
+
+    addPhoto: function() {
+      var photos = _.clone(this.model.get('photo'));
+      photos.push('');
+      this.model.set('photo', photos);
     },
 
 
