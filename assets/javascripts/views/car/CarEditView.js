@@ -3,6 +3,7 @@ define(function(require) {
   
   var template = require('hbs!car/edit');
   var DestroyBehavior = require('behavior/DestroyBehavior');
+  var OpenFileBehavior = require('behavior/OpenFileBehavior');
 
 
   var CarEditView = Marionette.ItemView.extend({
@@ -12,12 +13,16 @@ define(function(require) {
     behaviors: {
       destroy: {
         behaviorClass: DestroyBehavior
+      },
+      openimage: {
+        behaviorClass: OpenFileBehavior
       }
     },
 
     ui: {
       save: '#save',
-      photo: '.photo',
+      photo: '.car-photo',
+      carForm: '#car-form',
       del: '.link-photo-delete'
     },
 
@@ -46,10 +51,25 @@ define(function(require) {
 
     saveEditedCar: function(e) {
       e.preventDefault();
-      var photos = _.map(this.ui.photo, function(el) { return $(el).val(); });
-      var merged = this.merge(this.model.get('photo'), photos);
-      this.model.set('photo', merged);
-      // Backbone.history.navigate('/', {trigger: true});
+      this.updateData();
+      Backbone.history.navigate('/', {trigger: true});
+    },
+
+
+    updateData: function() {
+      var data = this.getObjectForm(this.ui.carForm)
+      data.photo = this.getPhoto();
+
+      if (this.isModelUnique(data)) { 
+        this.model.set(data);
+      } else {
+        alert('A car with such a model already exists');
+      }
+    },
+
+
+    getObjectForm: function(form) {
+      return _.object(_.map(form.serializeArray(), _.values));
     },
 
 
@@ -57,7 +77,20 @@ define(function(require) {
       return _.map(arr2, function(el, index) {
         return el || arr1[index];
       });
-    }
+    },
+
+
+    getPhoto: function() {
+      var photos = _.map(this.ui.photo, function(el) { return $(el).attr('src'); });
+      return this.merge(this.model.get('photo'), photos);
+    },
+
+
+    isModelUnique: function(data) {
+      var model = data.model;
+      if (model === this.model.get('model')) return true;
+      return !this.carsCollection.findWhere({model: model});
+    },
   });
 
   return CarEditView;
