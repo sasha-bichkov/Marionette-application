@@ -36,6 +36,11 @@ define(function(require) {
     },
 
 
+    onRender: function() {
+      this.setTotalPages();
+    },
+
+
     setTotalPages: function() {
       var len = this.carsCollection.fullCollection.length;
       var pageSize = this.carsCollection.state.pageSize;

@@ -11,7 +11,6 @@ define(function(require) {
       edit: false
     },
 
-
     validate: function(attrs, options) {
       if (attrs.text.length === 0) {
         return "Нельзя полностью удалить весь текст";

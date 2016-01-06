@@ -20,9 +20,6 @@ define(function(require) {
       'click @ui.byPrice': 'sortByPrice'
     },
 
-    initialize: function() {},
-
-
     sortByModel: function() {
       this.runSort({model: true});
     },

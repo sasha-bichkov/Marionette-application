@@ -9,8 +9,6 @@ define(function(require) {
 
     template: template,
 
-    initialize: function() {},
-
     behaviors: {
       destroy: {
         behaviorClass: DestroyBehavior

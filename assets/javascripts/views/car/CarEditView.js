@@ -38,11 +38,6 @@ define(function(require) {
     },
 
 
-    onRender: function() {
-      
-    },
-
-
     deletePhoto: function(e) {
       e.preventDefault();
       $(e.target).parent().remove();

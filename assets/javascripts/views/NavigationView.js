@@ -20,9 +20,6 @@ define(function(require) {
       'click @ui.item': 'setActiveLink'
     },
 
-    initialize: function() {},
-
-
     onRender: function() {
       this.setActiveLink();
     },

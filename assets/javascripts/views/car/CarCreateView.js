@@ -47,7 +47,7 @@ define(function(require) {
     },
 
 
-    createNewCar: function() {
+    createNewCar: function(data) {
       var carModel = new CarModel(data);
       this.carsCollection.add(carModel);
     },

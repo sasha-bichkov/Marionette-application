@@ -8,9 +8,7 @@ define(function(require) {
 
     tagName: 'tr',
 
-    template: template,
-
-    initialize: function() {}
+    template: template
   });
 
   return CarShortView;
