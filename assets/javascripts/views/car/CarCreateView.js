@@ -3,21 +3,29 @@ define(function(require) {
   
   var template = require('hbs!car/create');
   var CarModel = require('models/CarModel');
+  var CarCreateModel = require('models/CarCreateModel');
+  var OpenFileBehavior = require('behavior/OpenFileBehavior');
 
 
   var CarCreateView = Marionette.ItemView.extend({
 
     template: template,
 
+    model: new CarCreateModel(),
+
     ui: {
       form: '#car-form',
-      photo: '#photo',
       output: '#output'
     },
 
     events: {
-      'change @ui.photo': 'openFile',
       'submit @ui.form': 'createCar'
+    },
+
+    behaviors: {
+      openimage: {
+        behaviorClass: OpenFileBehavior
+      }
     },
 
     initialize: function() {
@@ -33,7 +41,7 @@ define(function(require) {
 
       if (isModelUnique(data)) {
         data.id = this.setId();
-        data.createdAt = this.getCreatedDate();
+        data.createdAt = this.model.getCreatedDate();
         if (this.photo) data.photo = [this.photo];
         var carModel = new CarModel(data);
         this.carsCollection.add(carModel);
@@ -56,31 +64,7 @@ define(function(require) {
 
 
     setId: function() {
-      var models = this.carsCollection.models;
-      var model_ids = _.map(models, function(m) { return m.get('id'); });
-      var max_id = _.max(model_ids);
-      return ++max_id;
-    },
-
-
-    getCreatedDate: function() {
-      var d = new Date();
-      return d.getDay() + '.' + (d.getMonth()+1) + '.' + d.getFullYear();
-    },
-
-
-    openFile: function(e) {
-      var self = this;
-      var input = event.target;
-      var reader = new FileReader();
-
-      reader.onload = function(){
-        var dataURL = reader.result;
-        self.ui.output.attr('src', dataURL);
-        self.photo = dataURL;
-      };
-
-      reader.readAsDataURL(input.files[0]);
+      return this.model.getId(this.carsCollection.fullCollection);
     }
   });
 
