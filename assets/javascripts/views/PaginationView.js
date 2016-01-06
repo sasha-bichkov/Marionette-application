@@ -30,12 +30,9 @@ define(function(require) {
 
     initialize: function() {
       this.carsCollection = this.options.carsCollection;
+
       this.listenTo(this.carsCollection, 'reset', this.setTotalPages);
-    },
-
-
-    onRender: function() {
-      this.setTotalPages();
+      this.listenTo(this.carsCollection, 'remove', this.setTotalPages);
     },
 
 
