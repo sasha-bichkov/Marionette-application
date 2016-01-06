@@ -32,9 +32,18 @@ define(function(require) {
     },
 
     initialize: function() {
+      this.id = this.options.id;
       this.carsCollection = this.options.carsCollection;
 
-      this.listenTo(this.carsCollection, 'reset', this.render);
+      this.listenTo(this.carsCollection, 'reset', this.setCarModel);
+    },
+
+
+    setCarModel: function() {
+      if (!this.model) {
+        this.model = this.getModelById(this.id);
+        this.render();
+      }
     },
 
 
@@ -86,6 +95,12 @@ define(function(require) {
       if (model === this.model.get('model')) return true;
       return !this.carsCollection.findWhere({model: model});
     },
+
+
+    getModelById: function(id) {
+      id = parseInt(id, 10);
+      return this.carsCollection.findWhere({id: id});
+    }
   });
 
   return CarEditView;

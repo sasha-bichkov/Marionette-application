@@ -40,15 +40,15 @@ define(function(require) {
 
 
     showCar: function(id) {
-      var carModel = this.getModelById(id);
-      var carDetailView = new CarDetailView({model: carModel});
+      var model = this.getModelById(id);
+      var carDetailView = new CarDetailView({model: model, id: id, carsCollection: this.carsCollection});
       this.main.show(carDetailView);
     },
 
 
     editCar: function(id) {
-      var carModel = this.getModelById(id);
-      var carEditView = new CarEditView({model: carModel, carsCollection: this.carsCollection});
+      var model = this.getModelById(id);
+      var carEditView = new CarEditView({model: model, id: id, carsCollection: this.carsCollection});
       this.main.show(carEditView);
     },
 

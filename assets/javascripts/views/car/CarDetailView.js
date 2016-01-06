@@ -13,6 +13,27 @@ define(function(require) {
       destroy: {
         behaviorClass: DestroyBehavior
       }
+    },
+
+    initialize: function() {
+      this.id = this.options.id;
+      this.carsCollection = this.options.carsCollection;
+
+      this.listenTo(this.carsCollection, 'reset', this.setCarModel);
+    },
+
+
+    setCarModel: function() {
+      if (!this.model) {
+        this.model = this.getModelById(this.id);
+        this.render();
+      }
+    },
+
+
+    getModelById: function(id) {
+      id = parseInt(id, 10);
+      return this.carsCollection.findWhere({id: id});
     }
   });
 
