@@ -2,7 +2,7 @@ define(function(require) {
   var Marionette = require('Marionette');
 
   var template = require('hbs!car/detail');
-  var DestroyBehavior = require('behaviors/DestroyBehavior');
+  var DestroyBehavior = require('behavior/DestroyBehavior');
 
 
   var CarDetailView = Marionette.ItemView.extend({

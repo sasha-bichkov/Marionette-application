@@ -5,7 +5,7 @@ define(function(require) {
   var template = require('hbs!car/cars');
   var NoCarsView = require('views/NoCarsView');
   var CarShortView = require('views/car/CarShortView');
-  var DestroyBehavior = require('behaviors/DestroyBehavior');
+  var DestroyBehavior = require('behavior/DestroyBehavior');
 
 
   var CarsCompositeView = Marionette.CompositeView.extend({
