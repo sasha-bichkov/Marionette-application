@@ -4,8 +4,9 @@
   <div>
     <ul>
       <li>
-        <img src="{{ this }}" data-photo-id="{{ @index }}" width="250">
-        <input type="file" data-photo-id="{{ @index }}">
+        <img src="{{ this }}" width="250">
+        <input class="photo" type="file" >
+        <a href="#" class="btn btn-default link link-photo-delete">Delete</a>
       </li>
     </ul>
   </div>
@@ -28,7 +29,7 @@
       <b>Описание: </b><textarea type="text" id="description" name="description">{{ description }}</textarea>
     </label>
     <br />
-    <button type="submit" id="create">Save</button>
+    <button type="submit" id="save">Save</button>
   </form>
 
   <a class="btn btn-default link link-delete" data-model-id="{{ id }}" href="#">Delete</a>
