@@ -3,7 +3,10 @@
   {{#each photo}}
   <div>
     <ul>
-      <li><img src="{{this}}" width="250"></li>
+      <li>
+        <img src="{{ this }}" data-photo-id="{{ @index }}" width="250">
+        <input type="file" data-photo-id="{{ @index }}">
+      </li>
     </ul>
   </div>
   {{/each}}
