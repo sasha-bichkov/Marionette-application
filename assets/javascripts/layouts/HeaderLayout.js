@@ -42,7 +42,7 @@ define(function(require) {
 
 
     setText: function() {
-      var text = this.aboutModel.getText300Symbols();
+      var text = this.aboutModel.getText200Symbols();
       this.model.set('text', text);
     }
   });

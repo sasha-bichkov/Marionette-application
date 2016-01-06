@@ -18,9 +18,9 @@ define(function(require) {
     },
 
 
-    getText300Symbols: function() {
+    getText200Symbols: function() {
       var text = this.get('text');
-      text = text.substr(0, 300) + '...';
+      text = text.substr(0, 200) + '...';
       return text;
     }
   });
