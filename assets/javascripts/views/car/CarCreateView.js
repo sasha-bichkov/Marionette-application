@@ -36,19 +36,29 @@ define(function(require) {
     createCar: function(e) {
       e.preventDefault();
       var form = this.ui.form;
-      var data = this.getObjectForm(form);
-      var isModelUnique = this.isModelUnique.bind(this);
+      var data = this.prepareData(this.getObjectForm(form));
 
-      if (isModelUnique(data)) {
-        data.id = this.setId();
-        data.createdAt = this.model.getCreatedDate();
-        if (this.photo) data.photo = [this.photo];
-        var carModel = new CarModel(data);
-        this.carsCollection.add(carModel);
+      if (this.isModelUnique(data)) {
+        this.createNewCar(data);
         Backbone.history.navigate('/', {trigger: true});
       } else {
         alert('A car with such a model already exists');
       }
+    },
+
+
+    createNewCar: function() {
+      var carModel = new CarModel(data);
+      this.carsCollection.add(carModel);
+    },
+
+
+    prepareData: function(data) {
+      var res = data;
+      res.id = this.setId();
+      res.createdAt = this.model.getCreatedDate();
+      if (this.photo) res.photo = [this.photo];
+      return res;
     },
 
 
