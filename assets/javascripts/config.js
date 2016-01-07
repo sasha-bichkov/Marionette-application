@@ -1,7 +1,5 @@
 requirejs.config({
-  // Указываем базовую директорию, где будем искать скрипты
   baseUrl: '/assets/javascripts',
-  // Прописываем пути до библиотек
   paths: {
     jquery: 'libs/jquery/jquery-1.11.3',
     underscore: 'libs/underscore-1.6.0',
@@ -23,7 +21,6 @@ requirejs.config({
   hbs: {
     base: 'templates'
   },
-  // указываем псевдонимы
   map: {
     '*': {
       $: 'jquery',
@@ -33,7 +30,6 @@ requirejs.config({
       Backbone_Paginator: 'backbone_paginator'
     }
   },
-  // Указываем зависимости к библиотекам
   shim: {
     underscore: {
       exports: '_'
