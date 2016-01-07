@@ -6,9 +6,7 @@ define(function(require) {
 
   var FooterLayout = Marionette.LayoutView.extend({
 
-    template: template,
-
-    initialize: function() {}
+    template: template
   });
 
   return FooterLayout;

@@ -18,14 +18,15 @@ define(function(require) {
       e.preventDefault();
       var self = this;
       var $el = $(e.target);
+      var collection = this.view.collection;
 
       alertify.confirm("Are you sure?", function (e) {
         if (e) {
           var id = $el.data('model-id');
-          var model = self.getModelById({id: id});
+          var model = self.getModelById(id);
 
-          if (self.view.collection) {
-            self.view.collection.remove(model);
+          if (collection) {
+            collection.remove(model);
           } else {
             model.destroy();
           }
@@ -36,9 +37,9 @@ define(function(require) {
     },
 
 
-    getModelById: function(option) {
+    getModelById: function(id) {
       if (this.view.model) return this.view.model;
-      return this.view.collection.findWhere(option);
+      return this.view.collection.findWhere({id: id});
     }
   });
 

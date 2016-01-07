@@ -28,7 +28,7 @@ define(function(require) {
     setActiveLink: function(e) {
       this.clearActive();
 
-      var hash = this.getHash();
+      var hash = this.model.getHash();
       var $target = e ? $(e.target) : null;
       var $link = $target || this.getCurrentLink(hash);
       $link.addClass('active');
@@ -36,19 +36,12 @@ define(function(require) {
 
 
     clearActive: function() {
-      var $links = this.ui.links;
-      $links.removeClass('active');
-    },
-
-
-    getHash: function() {
-      return this.model.getHash();
+      this.ui.links.removeClass('active');
     },
 
 
     getCurrentLink: function(hash) {
-      var $links = this.ui.links;
-      return $links.filter('[href="' + hash + '"]');
+      return this.ui.links.filter('[href="' + hash + '"]');
     }
   });
 

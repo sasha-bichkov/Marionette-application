@@ -26,13 +26,12 @@ define(function(require) {
       this.aboutModel = options.aboutModel;
 
       this.listenTo(this.aboutModel, 'change:text', this.setText);
-
-      this.setText();
     },
 
 
     onRender: function() {
       this.renderNavigation();
+      this.setText();
     },
 
 

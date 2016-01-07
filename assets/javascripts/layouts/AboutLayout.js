@@ -21,9 +21,6 @@ define(function(require) {
       'change': 'render'
     },
 
-    initialize: function() {},
-
-
     edit: function() {
       var edit = !this.model.get('edit');
       this.model.set('edit', edit);
