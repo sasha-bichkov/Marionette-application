@@ -1,3 +1,4 @@
+<h2>Car-{{ id }}</h2>
 {{#if model}}
   <div><img src="{{ photo.[0] }}" width="250" /></div>
   {{#each photo}}
@@ -5,12 +6,12 @@
       <div><img src="{{ this }}" width="150" /></div>
     {{/unless}}
   {{/each}}
-  <div>id: {{ id }}</div>
-  <div>Model: {{ model }}</div>
-  <div>Price: {{ price }}</div>
-  <div>Description: {{ description }}</div>
-  <div>Year: {{ year }}</div>
-  <div>Created At: {{ createdAt }}</div>
+  <p>id: {{ id }}</p>
+  <p>Model: {{ model }}</p>
+  <p>Price: {{ price }}</p>
+  <p>Description: {{ description }}</p>
+  <p>Year: {{ year }}</p>
+  <p>Created At: {{ createdAt }}</p>
   <div>
     <ul>
       <li class="item">

@@ -8,6 +8,8 @@ define(function(require) {
 
   var CarEditView = Marionette.ItemView.extend({
 
+    tagName: 'section',
+
     template: template,
 
     behaviors: {

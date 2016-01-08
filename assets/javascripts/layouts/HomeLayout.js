@@ -8,6 +8,8 @@ define(function(require) {
 
   var HomeLayout = Marionette.LayoutView.extend({
 
+    tagName: 'section',
+
     template: template,
 
     regions: {

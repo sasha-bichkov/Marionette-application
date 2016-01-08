@@ -6,6 +6,8 @@ define(function(require) {
 
   var AboutLayout = Marionette.LayoutView.extend({
 
+    tagName: 'section',
+
     template: template,
 
     ui: {

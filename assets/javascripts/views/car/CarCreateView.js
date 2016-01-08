@@ -9,6 +9,8 @@ define(function(require) {
 
   var CarCreateView = Marionette.ItemView.extend({
 
+    tagName: 'section',
+
     template: template,
 
     model: new CarCreateModel(),

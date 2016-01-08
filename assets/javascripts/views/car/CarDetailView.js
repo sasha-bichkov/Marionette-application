@@ -7,6 +7,8 @@ define(function(require) {
 
   var CarDetailView = Marionette.ItemView.extend({
 
+    tagName: 'section',
+    
     template: template,
 
     behaviors: {
