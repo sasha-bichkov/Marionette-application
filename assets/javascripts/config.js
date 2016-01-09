@@ -8,8 +8,7 @@ requirejs.config({
     marionette: 'libs/marionette-2.4.4',
     handlebars: 'libs/handlebars-4.0.5',
     text: 'libs/text-2.0.6',
-    alertify: 'libs/alertify-0.3.11',
-    hbs_helpers: 'hbs-helpers'
+    alertify: 'libs/alertify-0.3.11'
   },
   packages: [
     {
@@ -47,10 +46,6 @@ requirejs.config({
     },
     handlebars: {
       exports: 'Handlebars'
-    },
-    hbs_helpers: {
-      deps: ['handlebars'],
-      exports: 'hbs_helpers'
     }
   }
 });
