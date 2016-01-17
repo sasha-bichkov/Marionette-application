@@ -54,5 +54,5 @@ define(function(require) {
     CarListApp.footer.show(new FooterLayout());
   });
 
-  CarListApp.start();
+  return CarListApp;
 });

@@ -22,7 +22,6 @@ define(function(require) {
     },
 
     ui: {
-      save: '#save',
       photo: '.car-photo',
       carForm: '#car-form',
       del: '.link-photo-delete',
@@ -31,8 +30,8 @@ define(function(require) {
 
     events: {
       'click @ui.del': 'deletePhoto',
-      'click @ui.save': 'saveEditedCar',
-      'click @ui.addphoto': 'addPhoto'
+      'click @ui.addphoto': 'addPhoto',
+      'submit @ui.carForm': 'saveEditedCar'
     },
 
     initialize: function() {

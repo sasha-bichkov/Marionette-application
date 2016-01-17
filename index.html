@@ -18,7 +18,8 @@
 
   <script src="assets/javascripts/libs/require-2.1.22.js" data-main="assets/javascripts/config.js"></script>
   <script>
-    require([ 'application', 'hbs-helpers' ], function() {
+    require([ 'CarListApp', 'hbs-helpers' ], function(CarListApp) {
+      CarListApp.start();
       console.log('Application has been started');
     });
   </script>
